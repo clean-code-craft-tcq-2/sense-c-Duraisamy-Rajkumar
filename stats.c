@@ -10,9 +10,20 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     float total=0;
     for (count=0;count<setlength;count++)
     {
-        total=total+numberset[count];
+        if(numberset[count]!=NULL)
+        {
+            total=total+numberset[count];
+        }
     }
-    s.average = total/setlength;
+    
+    if(total!=0)
+    {
+        s.average = total/setlength;
+    }
+    else
+    {
+        s.average = NULL;
+    }
     
     count=0;
     s.min=numberset[count];
