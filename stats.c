@@ -15,14 +15,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
         total=total+numberset[count];
     }
     
-    if(total!=0)
-    {
-        s.average = total/setlength;
-    }
-    else
-    {
-        s.average = 0;
-    }
+    s.average = total/setlength;
     
     count=0;
     s.min=numberset[count];
