@@ -12,10 +12,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     float total=0;
     for (count=0;count<setlength;count++)
     {
-        if(numberset[count]!=NULL)
-        {
-            total=total+numberset[count];
-        }
+        total=total+numberset[count];
     }
     
     if(total!=0)
@@ -24,7 +21,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     else
     {
-        s.average = NULL;
+        s.average = 0;
     }
     
     count=0;
