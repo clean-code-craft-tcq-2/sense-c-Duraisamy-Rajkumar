@@ -38,7 +38,7 @@ int ledAlertCallCount = 0;
 
 void check_and_alert(float maxthreshold,  alerter_funcptr alerters[], struct Stats computedStats)
 {
-    if(computedStats.smax>maxthreshold)
+    if(computedStats.max>maxthreshold)
     {
         emailAlertCallCount=1;
         ledAlertCallCount=1;
