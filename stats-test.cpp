@@ -19,8 +19,7 @@ TEST_CASE("reports average, minimum and maximum") {
 
 TEST_CASE("average is NaN for empty array") {
     float numberset[5];
-    int setlength = 0;//sizeof(numberset) / sizeof(numberset[0]);
-    //REQUIRE(setlength==1);
+    int setlength = sizeof(numberset) / sizeof(numberset[0]);
     struct Stats computedStats = compute_statistics(numberset, setlength);
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
@@ -44,8 +43,6 @@ TEST_CASE("raises alerts when max is greater than threshold") {
 
     // need a way to check if both emailAlerter, ledAlerter were called
     // you can define call-counters along with the functions, as shown below
-    //REQUIRE(get_emailalerter() == 1);
-    //REQUIRE(get_ledAlerter() == 1);
     REQUIRE(emailAlertCallCount ==1 );
     REQUIRE(ledAlertCallCount ==1 );
 }
