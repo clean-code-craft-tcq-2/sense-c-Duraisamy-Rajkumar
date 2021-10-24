@@ -13,13 +13,3 @@ void ledAlerter()
 {
   ledAlertCallCount=1;
 }
-
-int get_emailalerter()
-{
-  return emailAlertCallCount;
-}
-
-int get_ledAlerter()
-{
-  return ledAlertCallCount;
-}
