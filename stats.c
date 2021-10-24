@@ -35,7 +35,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
 
 void check_and_alert(float maxthreshold, alerter_funcptr *alerters, struct Stats computedStats)
 {
-   // if(computedStats.max>maxthreshold)
+    if(computedStats.max>maxthreshold)
     {
         (*alerters[0])();
         (*alerters[1])();
