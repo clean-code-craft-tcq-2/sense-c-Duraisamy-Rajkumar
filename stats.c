@@ -40,8 +40,8 @@ void check_and_alert(float maxthreshold,  void (*alerters), struct Stats compute
 {
     if(computedStats.max>maxthreshold)
     {
-        alerter[0];
-        alerter[1];
+        alerters[0];
+        alerters[1];
     }
 }
 
