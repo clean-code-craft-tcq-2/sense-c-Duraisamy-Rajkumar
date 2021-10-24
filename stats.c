@@ -29,6 +29,8 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
             s.max=numberset[count];
         }
     }
+    
+    return s;
 }
 
 void check_and_alert(float maxthreshold,  alerter_funcptr alerters[], struct Stats computedStats)
