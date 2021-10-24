@@ -18,8 +18,8 @@ TEST_CASE("reports average, minimum and maximum") {
 }
 
 TEST_CASE("average is NaN for empty array") {
-    float numberset[5];
-    memset(numberset, 0, 5);
+    float numberset[];
+    numberset[0]=NULL;
     int setlength = sizeof(numberset) / sizeof(numberset[0]);
     REQUIRE(setlength==0);
     struct Stats computedStats = compute_statistics(numberset, setlength);
