@@ -2,9 +2,11 @@
 
 #include "catch.hpp"
 #include "stats.h"
+#include "alerter.h"
 
 #include <stdlib.h>
 #include <math.h>
+#include <cstddef>
 
 TEST_CASE("reports average, minimum and maximum") {
     float numberset[] = {1.5, 8.9, 3.2, 4.5};
@@ -17,12 +19,16 @@ TEST_CASE("reports average, minimum and maximum") {
 }
 
 TEST_CASE("average is NaN for empty array") {
-    Stats computedStats = compute_statistics(0, 0);
+    float numberset[]={ 0 };
+    
+    int setlength = 0;//sizeof(numberset) / sizeof(numberset[0]);
+    struct Stats computedStats = compute_statistics(numberset, setlength);
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
     
     //Design the REQUIRE statement here.
     //Use https://stackoverflow.com/questions/1923837/how-to-use-nan-and-inf-in-c
+    REQUIRE(isnan(computedStats.average)==1);
 }
 
 TEST_CASE("raises alerts when max is greater than threshold") {
@@ -39,6 +45,6 @@ TEST_CASE("raises alerts when max is greater than threshold") {
 
     // need a way to check if both emailAlerter, ledAlerter were called
     // you can define call-counters along with the functions, as shown below
-    REQUIRE(emailAlertCallCount == 1);
-    REQUIRE(ledAlertCallCount == 1);
+    REQUIRE(emailAlertCallCount ==1 );
+    REQUIRE(ledAlertCallCount ==1 );
 }
