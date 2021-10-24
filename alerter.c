@@ -1,8 +1,8 @@
 #include "alerter.h"
 
-alerter_funcptr emailAlerter()
+void emailAlerter()
 {
 }
-alerter_funcptr ledAlerter()
+void ledAlerter()
 {
 }
