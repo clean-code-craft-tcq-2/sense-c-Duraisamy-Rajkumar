@@ -37,8 +37,8 @@ void check_and_alert(float maxthreshold, alerter_funcptr *alerters, struct Stats
 {
    // if(computedStats.max>maxthreshold)
     {
-        alerters[0];
-        alerters[1];
+        (*alerters[0])();
+        (*alerters[1])();
     }
 }
 
